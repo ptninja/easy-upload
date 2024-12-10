@@ -45,6 +45,8 @@ const siteNameMap = {
   HH: getHHInfo,
   MTeam: getMTInfo,
   Orpheus: getGazelleMusicInfo,
+  JPopsuki: getGazelleMusicInfo,
+  lemonhd_music: getGazelleMusicInfo,
 };
 
 const siteTypeInfoMap = {

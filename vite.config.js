@@ -66,6 +66,7 @@ export default defineConfig({
           'https://hd-space.org/index.php?page=torrent-details&id=*',
           'https://speedapp.io/browse/*',
           'https://*.m-team.cc/detail/*',
+          'https://lemonhd.club/music_*.php',
         ],
         exclude: [
           'https://*/torrent/peers*',

@@ -301,7 +301,7 @@ declare namespace MusicJson {
     format: 'MP3' | 'FLAC'| 'AAC'| 'AC3'| 'DTS'
     categoryName: string
     id: number
-    media: 'CD'| 'DVD' | 'Vinyl' | 'Soundboard' |' SACD' | 'DAT' | 'Cassette' | 'WEB' | 'Blu-Ray'
+    media: 'CD'| 'DVD' | 'Vinyl' | 'Soundboard' |' SACD' | 'DAT' | 'Cassette' | 'WEB' | 'Blu-Ray' | 'Disc'
     size: number
     remasterYear: number
     remasterRecordLabel: string

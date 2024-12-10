@@ -37,12 +37,13 @@ if (CURRENT_SITE_NAME) {
     getTorrentInfo().then(() => {
       // 向当前所在站点添加按钮等内容
       console.log(TORRENT_INFO);
+      console.log(CURRENT_SITE_INFO);
     });
 
     let refNode = $(CURRENT_SITE_INFO.seedDomSelector)[0] as HTMLElement|null;
     const app = document.createElement('div');
     render(<App />, app);
-    if (['PTP', 'BTN', 'GPW', 'EMP', 'RED', 'DicMusic', 'MTV', 'Orpheus'].includes(CURRENT_SITE_NAME)) {
+    if (['PTP', 'BTN', 'GPW', 'EMP', 'RED', 'DicMusic', 'MTV', 'Orpheus', 'JPopsuki', 'lemonhd_music'].includes(CURRENT_SITE_NAME)) {
       const torrentId = getUrlParam('torrentid');
       if (CURRENT_SITE_NAME === 'GPW') {
         refNode = document.querySelector(`#torrent_detail_${torrentId} >td`);
@@ -51,6 +52,9 @@ if (CURRENT_SITE_NAME) {
         refNode = document.querySelector(`.groupid_${groupId}.torrentdetails>td`);
       } else if (CURRENT_SITE_NAME === 'MTV') {
         refNode = document.querySelector(`#torrentinfo${torrentId}>td`);
+      } else if (CURRENT_SITE_NAME === 'lemonhd_music') {
+        refNode = document.querySelectorAll(`#torrent-${torrentId} > td`)[1] as HTMLElement | null;
+        // refNode = document.querySelector(`#torrent-${torrentId} > td`);
       } else {
         refNode = document.querySelector(`#torrent_${torrentId} >td`);
       }

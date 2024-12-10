@@ -33,6 +33,8 @@ const siteHandlers: { [key: string]: (info: TorrentInfo.Info) => void } = {
   HDRoute: handleHDRoute,
   DicMusic: handleGazelleMusic,
   Orpheus: handleGazelleMusic,
+  JPopsuki: handleGazelleMusic,
+  lemonhd_music: handleGazelleMusic,
   iTS: handleITS,
   PTN: handlePTN,
 };
@@ -50,9 +52,12 @@ const fillTargetForm = (info: TorrentInfo.Info) => {
   const targetTorrentInfo: TorrentInfo.TargetTorrentInfo = { ...info };
   const isBluray = !!info?.videoType?.match(/bluray/i);
   targetTorrentInfo.isBluray = isBluray;
+  console.log('Handling ', targetTorrentInfo);
   const targetHelper = new TargetHelper(targetTorrentInfo);
   // 避免选择种子文件后自动改变种子名称
+  console.log('1: ', targetHelper.info);
   targetHelper.disableTorrentChange();
+  console.log('2: ', targetHelper.info);
   targetHelper.fillTorrentFile();
 
   if (!!handler && !CURRENT_SITE_NAME.match(/TJUPT|HDRoute|PTN|iTS/)) {
